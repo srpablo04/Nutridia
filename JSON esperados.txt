@@ -1,0 +1,166 @@
+Respuesta imagen:
+{
+  "type": "json_object",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "prompt": { "type": "string" }
+    },
+    "required": ["prompt"],
+    "additionalProperties": false
+  }
+}
+
+
+Respuesta IA:
+
+
+{
+    "type": "json_object",
+    "schema": {
+        "type": "object",
+        "properties": {
+        "item": {
+            "type": "array",
+            "items": {
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "usda_name": { "type": ["string", "null"] },
+                "amount": { "type": ["string", "number", "null"] }
+            },
+            "required": [
+                "name",
+                "usda_name",
+                "amount"
+            ],
+            "additionalProperties": False
+            }
+        }
+        },
+        "required": ["item"],
+        "additionalProperties": False
+    }
+    }
+
+
+Respuesta USDA/JSON final:
+
+{
+  "type": "json_object",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "item": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "integer" },
+            "name": { "type": "string" },
+            "usda_name": { "type": "string" },
+            "weight": { "type": "string" },
+            "amount": { "type": "string" },
+            "usda": { "type": "boolean" },
+            "macros": {
+              "type": "object",
+              "properties": {
+                "calories": { "type": ["number", "null"] },
+                "protein": { "type": ["number", "null"] },
+                "fat": { "type": ["number", "null"] },
+                "carbs": { "type": ["number", "null"] },
+                "etanol": { "type": ["number", "null"] },
+                "fiber": { "type": ["number", "null"] },
+                "sugars": { "type": ["number", "null"] },
+                "sat_fat": { "type": ["number", "null"] },
+                "cholesterol": { "type": ["number", "null"] }
+              },
+              "required": ["calories", "protein", "fat", "carbs", "etanol", "fiber", "sugars", "sat_fat", "cholesterol"],
+              "additionalProperties": false
+            },
+            "minerals": {
+              "type": "object",
+              "properties": {
+                "sodium": { "type": ["number", "null"] },
+                "potassium": { "type": ["number", "null"] },
+                "calcium": { "type": ["number", "null"] },
+                "iron": { "type": ["number", "null"] },
+                "magnesium": { "type": ["number", "null"] }
+              },
+              "required": ["sodium", "potassium", "calcium", "iron", "magnesium"],
+              "additionalProperties": false
+            },
+            "vitamins": {
+              "type": "object",
+              "properties": {
+                "vit_c": { "type": ["number", "null"] },
+                "vit_a": { "type": ["number", "null"] },
+                "vit_d": { "type": ["number", "null"] },
+                "vit_b12": { "type": ["number", "null"] },
+                "folate": { "type": ["number", "null"] }
+              },
+              "required": ["vit_c", "vit_a", "vit_d", "vit_b12", "folate"],
+              "additionalProperties": false
+            },
+            "notes": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["id", "name", "usda_name", "weight", "amount", "usda", "macros", "minerals", "vitamins", "notes"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["item"],
+    "additionalProperties": false
+  }
+}
+
+
+
+
+Respuesta trigrama:
+
+{
+  "type": "json_object",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "item": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "prompt": { "type": "string" },
+            "food": {
+              "type": "object",
+              "properties": {
+                "key_word": { "type": "string" },
+                "option_0": { "type": "string" },
+                "option_1": { "type": "string" },
+                "option_2": { "type": "string" },
+                "option_3": { "type": "string" },
+                "option_4": { "type": "string" },
+                "option_5": { "type": "string" },
+                "option_6": { "type": "string" },
+                "option_7": { "type": "string" },
+                "option_8": { "type": "string" },
+                "option_9": { "type": "string" }
+              },
+              "required": [
+                "key_word", "option_0", "option_1", "option_2", "option_3", 
+                "option_4", "option_5", "option_6", "option_7", "option_8", "option_9"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": ["prompt", "food"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["item"],
+    "additionalProperties": false
+  }
+}

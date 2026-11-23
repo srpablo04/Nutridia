@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+*.gguf
+*.whl
+*.lnk
+*.db
+*.sqlite
+*.sqlite3
+API/db/database/
+API/db/FoodData_Central_csv_*/

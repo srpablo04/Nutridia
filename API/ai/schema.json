@@ -1,0 +1,84 @@
+{
+  "type": "json_object",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "schema_image": {
+        "type": "object",
+        "properties": {
+          "resultado": { "type": "string" }
+        },
+        "required": ["resultado"],
+        "additionalProperties": false
+      },
+      "schema_request": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "usda_name": { "type": ["string", "null"] },
+                "amount": { "type": ["string", "number", "null"] }
+              },
+              "required": ["name", "usda_name", "amount"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["item"],
+        "additionalProperties": false
+      },
+      "schema_verification": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "usda_name": { "type": "string" },
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nutrient": { "type": "string" },
+                      "value": { "type": ["number", "null"] }
+                    },
+                    "required": ["nutrient", "value"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": ["usda_name", "values"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["item"],
+        "additionalProperties": false
+      },
+      "schema_trgm": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "option": { "type": ["string", "null"] }
+              },
+              "required": ["option"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["item"],
+        "additionalProperties": false
+      }
+    }
+  }
+}
