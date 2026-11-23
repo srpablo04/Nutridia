@@ -1,4 +1,4 @@
-# Nutridia
+hf# Nutridia
 
 Nutridia es una API que identifica alimentos a partir de texto o imágenes y devuelve su información nutricional.
 
@@ -140,6 +140,8 @@ Introduce la contraseña de PostgreSQL cuando se solicite.
 Si PostgreSQL está instalado en otra ubicación, ajusta la ruta del ejecutable. El archivo generado debe facilitarse junto al proyecto o mediante una descarga separada, según su tamaño.
 
 ### Restaurar la copia en otro equipo
+
+Descarga la base de datos desde: https://github.com/srpablo04/Nutridia/releases/download/v1.0/nutridia.dump
 
 Estos comandos presuponen que has recibido `nutridia.dump`, tienes PostgreSQL iniciado y todavía no existe una base llamada `sqlalchemy_3` en esa instalación.
 
